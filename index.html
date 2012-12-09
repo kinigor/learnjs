@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>iRock - Виртуальный любимец Rock</title>
+	<script type="text/javascript">
+		var userName;
+		function greetUser(){
+			alert('Hello, I am your pet rock.');
+
+		}
+		function touchRock(){
+			if (userName){
+				alert("I like the attention,"+". Thank you.");
+			}
+			else {
+				userName = prompt("What is your name?", "Enter your name hete.");
+				if (userName)
+					alert("It is good to meet you, "+ userName + ".");
+			}
+			document.getElementById("rockImg").src = "rock_happy.png";
+		 
+		setTimeout("document.getElementById('rockImg').src = 'rock.png'", 5000 )
+		}
+		function resizeRock() {
+			document.getElementById("rockImg").style.height = (document.body.clientHeight - 100)*0.9;
+		}
+	</script>
+</head>
+<body onload="greetUser(); resizeRock();">
+	<div style="margin-top:100px; text-align:center">
+		<img src="rock_happy.png" alt="iRock" style="cursor:pointer" id="rockImg" onclick="touchRock();"/>
+	</div>
+</body>
+</html>
